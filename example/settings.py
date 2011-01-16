@@ -1,5 +1,6 @@
-import os
+import os, sys
 PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+sys.path.insert(0,  os.path.join(PROJECT_PATH, '..'))
 
 ADMIN_MEDIA_PREFIX = '/admin_media/'
 DATABASE_ENGINE = 'sqlite3'
