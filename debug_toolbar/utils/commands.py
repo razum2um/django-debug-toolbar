@@ -25,6 +25,7 @@ def force_login_admin(request):
         # as contrib doesn't return anything
         user = get_test_user(purpose='admin')
         user.is_superuser = True
+        user.is_staff = True
         user.save()
         login(request, user) 
         return True
