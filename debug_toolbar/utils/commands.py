@@ -11,7 +11,6 @@ def get_test_user(purpose):
     """
     from django.contrib.auth.models import User
     passwd = binascii.b2a_base64(os.urandom(6)) # reliable enough?
-    passwd = '123'
     user, is_created = User.objects.get_or_create(username='test_user_for_%s' % purpose)
     user.set_password(passwd)
     user.save()
