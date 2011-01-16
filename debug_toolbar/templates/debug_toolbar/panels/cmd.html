@@ -1,0 +1,25 @@
+{% load i18n %}
+<table>
+	<thead>
+		<tr>
+			<th>{% trans "Function Name" %}</th>
+            <th>{% trans "Comment/Response" %}</th>
+		</tr>
+	</thead>
+	<tbody>
+        {% if cmds %}
+            {% for cmd in cmds %}
+                <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                    <td><a class="remoteCallJson" href="/__debug__/cmd/{{ cmd.name }}/">{{ cmd.verbose_name }}</a></td>
+                    <td><div class='comment'>{{ cmd.doc }}</div></td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                <td>{% trans "No functions defined" %}</td>
+                <td>{% trans "No comments" %}</td>
+            </tr>
+            
+        {% endif %}
+	</tbody>
+</table>

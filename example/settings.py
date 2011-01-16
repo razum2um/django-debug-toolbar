@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import os, sys
 PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 sys.path.insert(0,  os.path.join(PROJECT_PATH, '..'))
@@ -13,6 +14,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'debug_toolbar',
+    #'django_extensions',
 )
 INTERNAL_IPS = ('127.0.0.1',)
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
@@ -33,3 +35,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 TEMPLATE_DEBUG = DEBUG
 TEMPLATE_DIRS = (os.path.join(PROJECT_PATH, 'templates'))
+
+from debug_toolbar.utils.debug_cmd import DebugCmd
+from debug_toolbar.utils.commands import force_login_admin, force_logout
+
+DEBUG_CMD_FUNCTIONS = (
+        DebugCmd('login_admin', 'Enter as admin', force_login_admin),
+        DebugCmd('logout', 'Logout', force_logout),
+        )
+# left it for easier function search
+DEBUG_CMD_FUNCTIONS = dict(((debug_cmd.name, debug_cmd) for debug_cmd in DEBUG_CMD_FUNCTIONS)) 

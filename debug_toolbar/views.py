@@ -12,6 +12,7 @@ from django.http import HttpResponseBadRequest
 from django.shortcuts import render_to_response
 from django.utils import simplejson
 from django.utils.hashcompat import sha_constructor
+from django.core.exceptions import ImproperlyConfigured
 
 class InvalidSQLError(Exception):
     def __init__(self, value):
@@ -187,3 +188,24 @@ def template_source(request):
         'source': source,
         'template_name': template_name
     })
+
+def cmd(request, name):
+    from django.shortcuts import redirect
+    from django.http import HttpResponse
+    from django.conf import settings
+
+    debug_cmd = settings.DEBUG_CMD_FUNCTIONS.get(name,None)
+    if not debug_cmd:
+        raise ImproperlyConfigured('function name should be in settings.py.DEBUG_CMD_FUNCTIONS')
+    
+    response = debug_cmd.fn(request)
+    if isinstance(response, bool) and response:
+        return HttpResponse(simplejson.dumps('ok'), mimetype='application/json') # it's also does js-page reload
+    elif isinstance(response, bool) and not response:
+        return HttpResponse(simplejson.dumps('fail'), mimetype='application/json') 
+    elif isinstance(response, str):
+        return HttpResponse(simplejson.dumps(response), mimetype='application/json')
+    elif isinstance(response, HttpResponse):
+        return response
+    else:
+        raise ImproperlyConfigured('function in settings.py.DEBUG_CMD_FUNCTIONS must return bool, str or HttpResponse')

@@ -53,6 +53,24 @@
 				$('#djDebugWindow').show();
 				return false;
 			});
+			$('#djDebug a.remoteCallJson').click(function() {
+                $('#djDebug .clicked-td').removeClass('clicked-td');
+                $('#djDebug .comment').empty();
+                $.ajax({
+                type: "POST",
+                url: this.href,
+                data: {},
+                dataType: "json",
+                success: function(json) {
+                    $('#djDebug .clicked-td').parent().next().html('<p style="color:green">' + json + '</p>');
+                },
+                error: function(json) {
+                    $('#djDebug .clicked-td').parent().next().html('<p style="color:red">' + json + '</p>');
+                }
+                });
+                $(this).addClass('clicked-td');
+				return false;
+			});
 			$('#djDebugTemplatePanel a.djTemplateShowContext').click(function() {
 				djdt.toggle_arrow($(this).children('.toggleArrow'))
 				djdt.toggle_content($(this).parent().next());

@@ -11,6 +11,15 @@
 		<li><a href="/mootools/index/">MooTools 1.2.4</a></li>
 		<li><a href="/prototype/index/">Prototype 1.6.1</a></li>
 	</ul>
-
+    {% if request.user.is_anonymous %}
+        <p>You are a anonymous. Congratulations!</p>
+    {% else %}
+        <p>You are NOT an anonymous. Sorry.</p>
+    {% endif %}
+    {% if request.user.is_superuser %}
+        <p>You are a superuser. Congratulations!</p>
+    {% else %}
+        <p>You are NOT a superuser. Sorry.</p>
+    {% endif %}
 </body>
 </html>

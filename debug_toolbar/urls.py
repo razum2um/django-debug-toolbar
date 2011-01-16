@@ -15,4 +15,6 @@ urlpatterns = patterns('',
     url(r'^%s/sql_explain/$' % _PREFIX, 'debug_toolbar.views.sql_explain', name='sql_explain'),
     url(r'^%s/sql_profile/$' % _PREFIX, 'debug_toolbar.views.sql_profile', name='sql_profile'),
     url(r'^%s/template_source/$' % _PREFIX, 'debug_toolbar.views.template_source', name='template_source'),
+    url(r'^%s/cmd/(?P<name>\w+)/$' % _PREFIX, 'debug_toolbar.views.cmd', name='cmd'),
 )
+
