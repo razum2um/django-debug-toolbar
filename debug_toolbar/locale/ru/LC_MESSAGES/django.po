@@ -8,22 +8,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-18 08:06-0800\n"
+"POT-Creation-Date: 2011-01-17 01:12+0600\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Mikhail Korobov <kmike84@gmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: panels/cache.py:92
+#: panels/cache.py:90
 #, python-format
 msgid "Cache: %.2fms"
 msgstr ""
 
-#: panels/cache.py:95
+#: panels/cache.py:93
 msgid "Cache Usage"
 msgstr ""
+
+#: panels/cmd.py:29 panels/cmd.py:32
+msgid "Cmd Debug"
+msgstr "Доп. действия"
 
 #: panels/headers.py:36 panels/headers.py:39
 msgid "HTTP Headers"
@@ -49,28 +54,28 @@ msgstr "Настройки"
 #: panels/settings_vars.py:19
 #, python-format
 msgid "Settings from <code>%s</code>"
-msgstr ""
+msgstr "Настройки из <code>%s</code>"
 
 #: panels/signals.py:39 panels/signals.py:42
 msgid "Signals"
 msgstr "Сигналы"
 
-#: panels/sql.py:146
+#: panels/sql.py:147
 msgid "SQL"
 msgstr ""
 
-#: panels/sql.py:160
+#: panels/sql.py:161
 msgid "SQL Queries"
-msgstr ""
+msgstr "SQL запросы"
 
-#: panels/template.py:47
+#: panels/template.py:55
 msgid "Templates"
 msgstr "Шаблоны"
 
-#: panels/template.py:52
+#: panels/template.py:60
 #, python-format
 msgid "Templates (%(num_templates)s rendered)"
-msgstr ""
+msgstr "Шаблоны (%(num_templates)s отрендерено)"
 
 #: panels/timer.py:35 templates/debug_toolbar/panels/cache.html:39
 #: templates/debug_toolbar/panels/logger.html:7
@@ -105,26 +110,26 @@ msgstr ""
 
 #: panels/timer.py:82
 msgid "Context switches"
-msgstr ""
+msgstr "Переключения контекста"
 
 #: panels/version.py:20 panels/version.py:29
 #, fuzzy
 msgid "Versions"
 msgstr "Версия Django"
 
-#: templates/debug_toolbar/base.html:23
+#: templates/debug_toolbar/base.html:13
 msgid "Hide Toolbar"
-msgstr ""
+msgstr "Скрыть панель"
 
-#: templates/debug_toolbar/base.html:23
+#: templates/debug_toolbar/base.html:13
 msgid "Hide"
 msgstr "Скрыть"
 
-#: templates/debug_toolbar/base.html:48
+#: templates/debug_toolbar/base.html:38
 msgid "Show Toolbar"
-msgstr ""
+msgstr "Показать панель"
 
-#: templates/debug_toolbar/base.html:54
+#: templates/debug_toolbar/base.html:44
 msgid "Close"
 msgstr "Закрыть"
 
@@ -179,15 +184,31 @@ msgstr ""
 msgid "Function"
 msgstr ""
 
+#: templates/debug_toolbar/panels/cmd.html:5
+msgid "Function Name"
+msgstr "Имя функции"
+
+#: templates/debug_toolbar/panels/cmd.html:6
+msgid "Comment/Response"
+msgstr "Комментарий/Ответ сервера"
+
+#: templates/debug_toolbar/panels/cmd.html:19
+msgid "No functions defined"
+msgstr "Нет функций"
+
+#: templates/debug_toolbar/panels/cmd.html:20
+msgid "No comments"
+msgstr "Без комментариев"
+
 #: templates/debug_toolbar/panels/headers.html:5
 msgid "Key"
 msgstr "Заголовок"
 
 #: templates/debug_toolbar/panels/headers.html:6
-#: templates/debug_toolbar/panels/request_vars.html:37
-#: templates/debug_toolbar/panels/request_vars.html:63
-#: templates/debug_toolbar/panels/request_vars.html:85
-#: templates/debug_toolbar/panels/request_vars.html:107
+#: templates/debug_toolbar/panels/request_vars.html:39
+#: templates/debug_toolbar/panels/request_vars.html:65
+#: templates/debug_toolbar/panels/request_vars.html:87
+#: templates/debug_toolbar/panels/request_vars.html:109
 #: templates/debug_toolbar/panels/settings_vars.html:6
 #: templates/debug_toolbar/panels/timer.html:10
 msgid "Value"
@@ -221,46 +242,46 @@ msgstr ""
 msgid "kwargs"
 msgstr ""
 
-#: templates/debug_toolbar/panels/request_vars.html:27
+#: templates/debug_toolbar/panels/request_vars.html:29
 #, fuzzy
 msgid "COOKIES Variables"
 msgstr "Переменная"
 
-#: templates/debug_toolbar/panels/request_vars.html:36
-#: templates/debug_toolbar/panels/request_vars.html:62
-#: templates/debug_toolbar/panels/request_vars.html:84
-#: templates/debug_toolbar/panels/request_vars.html:106
+#: templates/debug_toolbar/panels/request_vars.html:38
+#: templates/debug_toolbar/panels/request_vars.html:64
+#: templates/debug_toolbar/panels/request_vars.html:86
+#: templates/debug_toolbar/panels/request_vars.html:108
 msgid "Variable"
 msgstr "Переменная"
 
-#: templates/debug_toolbar/panels/request_vars.html:50
+#: templates/debug_toolbar/panels/request_vars.html:52
 msgid "No COOKIE data"
 msgstr ""
 
-#: templates/debug_toolbar/panels/request_vars.html:53
+#: templates/debug_toolbar/panels/request_vars.html:55
 #, fuzzy
 msgid "SESSION Variables"
 msgstr "Переменная"
 
-#: templates/debug_toolbar/panels/request_vars.html:76
+#: templates/debug_toolbar/panels/request_vars.html:78
 msgid "No SESSION data"
 msgstr ""
 
-#: templates/debug_toolbar/panels/request_vars.html:79
+#: templates/debug_toolbar/panels/request_vars.html:81
 #, fuzzy
 msgid "GET Variables"
 msgstr "Переменная"
 
-#: templates/debug_toolbar/panels/request_vars.html:98
+#: templates/debug_toolbar/panels/request_vars.html:100
 msgid "No GET data"
 msgstr ""
 
-#: templates/debug_toolbar/panels/request_vars.html:101
+#: templates/debug_toolbar/panels/request_vars.html:103
 #, fuzzy
 msgid "POST Variables"
 msgstr "Переменная"
 
-#: templates/debug_toolbar/panels/request_vars.html:120
+#: templates/debug_toolbar/panels/request_vars.html:122
 msgid "No POST data"
 msgstr ""
 
